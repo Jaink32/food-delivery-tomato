@@ -8,7 +8,7 @@ const EMPTY_CART = {
   totalCount: 0,
 };
 
-export default function CartProvider({ children }) {z
+export default function CartProvider({ children }) {
   const initCart = getCartFromLocalStorage();
     const [cartItems, setCartItems] = useState(initCart.items);
   const [totalPrice, setTotalPrice] = useState(initCart.totalPrice);
