@@ -1,0 +1,53 @@
+.footer {
+    background-color: #f8f8f8;
+    /* Light background */
+    color: #555;
+    /* Dark grey text */
+    padding: 1.5rem 0;
+    margin-top: 3rem;
+    /* Space above the footer */
+    border-top: 1px solid #e7e7e7;
+    /* Subtle top border */
+    font-size: 0.9rem;
+}
+
+.container {
+    max-width: 1100px;
+    /* Max width for content */
+    margin: 0 auto;
+    /* Center the content */
+    padding: 0 1rem;
+    /* Padding on smaller screens */
+    text-align: center;
+    /* Center text by default */
+}
+
+.copyright {
+    /* Style for copyright text */
+}
+
+/* Optional styles for links if added later */
+/* 
+.links {
+    margin-top: 0.5rem;
+}
+
+.links a {
+    color: #e72929; 
+    margin: 0 0.5rem;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.links a:hover {
+    color: #c12121; 
+}
+*/
+
+/* Basic responsiveness */
+@media (min-width: 768px) {
+    .container {
+        text-align: center;
+        /* Keep centered, or change to left/right */
+    }
+}

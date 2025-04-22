@@ -1,0 +1,20 @@
+{
+  "name": "food-mine",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "cd backend && npm start",
+    "prebuild": "cd backend && npm install",
+    "build": "cd frontend && npm run build",
+    "postbuild": "mv -f frontend/build backend/src/public",
+    "dev": "concurrently --names \"BACKEND,FRONTEND\" --kill-others \"npm run dev --prefix backend\" \"npm start --prefix frontend\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "��#\u0000 \u0000f\u0000o\u0000o\u0000d\u0000-\u0000m\u0000i\u0000n\u0000e\u0000\r\u0000 \u0000",
+  "devDependencies": {
+    "concurrently": "^9.1.2",
+    "ncp": "^2.0.0"
+  }
+}
