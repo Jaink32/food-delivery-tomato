@@ -8,8 +8,10 @@ const PASSWORD_HASH_SALT_ROUNDS = 10;
 set("strictQuery", true);
 
 export const dbConnect = async () => {
+  // Mongo_URL = "mongodb+srv://jaink3265:EUU3t9NSowTiLYpF@cluster0.nmoz1mj.mongodb.net/food-mine?retryWrites=true&w=majority&appName=Cluster0";
   try {
-    connect(process.env.MONGO_URI, {
+    connect("mongodb+srv://jaink3265:EUU3t9NSowTiLYpF@cluster0.nmoz1mj.mongodb.net/food-mine?retryWrites=true&w=majority&appName=Cluster0", {
+
       useNewUrlParser: true,
       useUnifiedTopology: true,
     });
