@@ -8,6 +8,7 @@ import foodRouter from "./routers/food.router.js";
 import userRouter from "./routers/user.router.js";
 import orderRouter from "./routers/order.router.js";
 import uploadRouter from "./routers/upload.router.js";
+import chatRouter from "./routers/chat.router.js";
 // import restaurantRouter from "./routers/restaurant.router.js"; // Removed import
 
 import { dbConnect } from "./config/database.config.js";
@@ -33,6 +34,7 @@ app.use("/api/foods", foodRouter);
 app.use("/api/users", userRouter);
 app.use("/api/orders", orderRouter);
 app.use("/api/upload", uploadRouter);
+app.use("/api/chat", chatRouter);
 // app.use("/api/restaurants", restaurantRouter); // Removed usage
 
 // --- Serve Frontend Build ---

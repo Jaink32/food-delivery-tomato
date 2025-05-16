@@ -16,7 +16,7 @@ export default function Search({
   placeholder,
 }) {
   const [term, setTerm] = useState("");
-  const [isListening, setIsListening] = useState(false);
+  // const [isListening, setIsListening] = useState(false);
   const navigate = useNavigate();
   const { searchTerm } = useParams();
   const [debouncedTerm] = useDebounce(term, 500);
@@ -39,36 +39,36 @@ export default function Search({
       : navigate(defaultRoute);
   };
 
-  const startListening = () => {
-    if ("webkitSpeechRecognition" in window) {
-      const recognition = new window.webkitSpeechRecognition();
-      recognition.continuous = false;
-      recognition.interimResults = false;
+  // const startListening = () => {
+  //   if ("webkitSpeechRecognition" in window) {
+  //     const recognition = new window.webkitSpeechRecognition();
+  //     recognition.continuous = false;
+  //     recognition.interimResults = false;
 
-      recognition.onstart = () => {
-        setIsListening(true);
-      };
+  //     recognition.onstart = () => {
+  //       setIsListening(true);
+  //     };
 
-      recognition.onresult = (event) => {
-        const transcript = event.results[0][0].transcript;
-        setTerm(transcript);
-        search(transcript);
-      };
+  //     recognition.onresult = (event) => {
+  //       const transcript = event.results[0][0].transcript;
+  //       setTerm(transcript);
+  //       search(transcript);
+  //     };
 
-      recognition.onerror = (event) => {
-        console.error("Speech recognition error:", event.error);
-        setIsListening(false);
-      };
+  //     recognition.onerror = (event) => {
+  //       console.error("Speech recognition error:", event.error);
+  //       setIsListening(false);
+  //     };
 
-      recognition.onend = () => {
-        setIsListening(false);
-      };
+  //     recognition.onend = () => {
+  //       setIsListening(false);
+  //     };
 
-      recognition.start();
-    } else {
-      alert("Speech recognition is not supported in your browser.");
-    }
-  };
+  //     recognition.start();
+  //   } else {
+  //     alert("Speech recognition is not supported in your browser.");
+  //   }
+  // };
 
   return (
     <div className={classes.container} style={{ margin }}>
@@ -78,7 +78,7 @@ export default function Search({
         onChange={(e) => setTerm(e.target.value)}
         value={term}
       />
-      <button
+      {/* <button
         onClick={startListening}
         className={`${classes.micButton} ${
           isListening ? classes.listening : ""
@@ -86,7 +86,7 @@ export default function Search({
         title="Click to speak"
       >
         🎤
-      </button>
+      </button> */}
     </div>
   );
 }
